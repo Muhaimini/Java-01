@@ -1,17 +1,34 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
+interface  MyClassInterface {
+    public void myFirstNumber (int number);
+    public void displayData();
+}
+
+class Myclass implements  MyClassInterface {
+    boolean isValidUser = false;
+
+    Myclass(boolean initial){
+        this.isValidUser = initial;
+    }
+
+
+    public void myFirstNumber(int number){
+        System.out.println("My first number is " + number);
+    }
+
+    public  void displayData(){
+        System.out.println("Hello, my value is " + this.isValidUser);
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int first_number = 100;
+        boolean validUser = false;
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Myclass myClass = new Myclass(validUser);
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
-        }
+        myClass.displayData();
+        myClass.myFirstNumber(first_number);
     }
 }
